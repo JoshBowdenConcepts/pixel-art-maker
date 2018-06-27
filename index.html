@@ -1,17 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Pixel Art Maker for the Grow with Google Udacity Front-End Development Course">
-        <meta name="keywords" content="HTML, CSS, jQuery, JavaScript">
-        <meta name="author" content="Josh Bowden">
-        <meta http-equiv="refresh" content="30"> <!-- Refresh Every 30s -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pixel Art Maker</title>
-        <link href="stylesheets/style.css" type="text/css">
-    </head>
-    <body>
-    
-    </body>
-    
+
+<head>
+    <meta charset="utf-8">
+    <title>Pixel Art Maker!</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Pixel Art Maker</h1>
+    </div>
+
+    <div class="tool-bar">
+        <div class="control-block">
+            <h3>Grid</h3>
+            <div class="control">
+                <i class="fas fa-arrows-alt-v"></i>
+                <p>Height:</p>
+                <input type="number" id="inputHeight" name="height" min="1" value="1">
+            </div>
+            <div class="control">
+                <i class="fas fa-arrows-alt-h"></i>
+                <p>Width:</p>
+                <input type="number" id="inputWidth" name="width" min="1" value="1">
+            </div>
+        </div>
+        <div class="control-block">
+            <h3>Color</h3>
+            <div class="control">
+                <i class="fas fa-magic"></i>
+                <p>Pick:</p>
+                <input type="color" id="colorPicker">
+            </div>
+            <div class="control">
+                <i class="fas fa-hashtag"></i>
+                <p>HEX:</p>
+                <input type="text" id="hex">
+            </div>
+        </div>
+        <div class="control-block">
+            <h3>create</h3>
+            <div class="control">
+            <form onSubmit="makeGrid()">
+                <input type='submit' id='getval' name="background-image" value="Make Grid" />
+              </form>
+            </div>
+            <div class="control">
+                <input type="submit" onclick="makeGrid()" id="sizeSubmit" value="CLEAR">
+            </div>
+        </div>
+    </div>
+
+    <div class="collapse">
+        <i id="collapse-icon" class="fas fa-angle-up"></i>
+    </div>
+
+
+    <h2>Design Canvas</h2>
+    <table id="pixelCanvas">
+
+    </table>
+
+    <script src="designs.js"></script>
+</body>
+
 </html>
